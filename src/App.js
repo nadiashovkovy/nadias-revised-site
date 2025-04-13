@@ -3,6 +3,22 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './styles.css';
 
 function App() {
+  useEffect(() => {
+    const handleScroll = () => {
+      const wordsImg = document.querySelector(".words-img");
+      if (wordsImg) {
+        const scrollPosition = window.scrollY; // Get the current scroll position
+        wordsImg.style.transform = `translateX(${scrollPosition * 0.1}px)`; // Adjust horizontal position
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll); // Listen for scroll events
+    return () => {
+      window.removeEventListener("scroll", handleScroll); // Clean up the event listener
+    };
+  }, []);
+
+  
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -55,15 +71,51 @@ function App() {
 
 
       <section id="about" className="about">
+      <img src = "images/page1bg2.png" className = "bg2"/>
         <section id="about-content" className='about-content fade-in'> 
           <img src = "images/learnallaboutme.png" className="about-img1"/>
-          <img src ="images/Illustration.png" className = "about-img2"/>
         </section>
 
-        <section id="skills-content" className='about-content fade-in'> 
+        <section id="skills-content" className='skills-content fade-in'> 
           <img src = "images/afewskills.png" className="about-img1"/>
+
+
+          <section id = "skills-boxes" className= "skills-boxes">
+          <div class="skills-box fade-in">
+            <div class="flip-inner">
+                <div class="flip-front">
+                    <p>Programming Languages</p>
+                </div>
+                <div class="flip-back">
+                    <p>Java, Python, Javascript, C/C++, Swift/SwiftUI</p>
+                </div>
+            </div>
+          </div>
+
+          <div class="skills-box fade-in">
+            <div class="flip-inner">
+              <div class="flip-front">
+                  <p>Tools & Frameworks</p>
+              </div>
+              <div class="flip-back">
+                  <p>React, PyTorch, AWS, Xcode, Figma</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills-box fade-in">
+            <div class="flip-inner">
+              <div class="flip-front">
+                  <p>Development Areas</p>
+              </div>
+              <div class="flip-back">
+                  <p>Web & Mobile Development, AI & Machine Learning, UI/UX</p>
+              </div>
+            </div>
+          </div>
+          </section>
+          <img src = "images/words.png" className="words-img"/>
         </section>
-        <img src = "images/page1bg2.png" className = "bg"/>
       </section>
 
 
@@ -71,7 +123,7 @@ function App() {
 
 
       <section id="projects" className="projects">
-        <img src = "images/projectsbg1.png" className = "bg"/>
+        <img src = "images/projectsbg1.png" className = "bg1"/>
         <section id="projects-content" className='projects-content fade-in'> 
         <img src = "images/checkout.png" className="project-img1"/>
 
@@ -171,7 +223,7 @@ function App() {
 
   
 
-      <section id = "footer" className="footer"> 
+      <section id = "contact" className="contact"> 
 
           <section id="contact-content" className='contact-content fade-in'>
             <button class="fake-btn">contact me!</button>
@@ -183,8 +235,21 @@ function App() {
               <textarea placeholder="Message" rows="6" cols="20"></textarea>
               <button class="real-btn3 enlarge-on-hover">Send Message</button>
           </section>
-          {/* <img src = "images/footerrectangle.png" className='footer-rect'></img> */}
+          <img src ="images/Illustration.png" className = "footer-img fade-in" alt="Footer Illustration"/>
+      </section>
 
+      <section id = "socials" className = "socials">
+        <div className="social-links">
+          <a href="https://www.linkedin.com/in/nadia-shovkovy/" target ="blank" className="project-link">
+            <img src="images/linkedin.png" alt="icon" className="foot-link-icon" />
+            LinkedIn</a>
+          <a href="https://github.com/nadiashovkovy" target ="blank" className="project-link">
+            <img src="images/gh.png" alt="icon" className="foot-link-icon" />
+            Github</a>
+          <a href="https://medium.com/@nadiashovkovy" target ="blank" className="project-link">
+            <img src="images/medium.png" alt="icon" className="foot-link-icon" />
+            Medium</a>
+        </div>  
       </section>
 
       
