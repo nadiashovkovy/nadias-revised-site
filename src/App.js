@@ -3,22 +3,9 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './styles.css';
 
 function App() {
-  useEffect(() => {
-    const handleScroll = () => {
-      const wordsImg = document.querySelector(".words-img");
-      if (wordsImg) {
-        const scrollPosition = window.scrollY; // Get the current scroll position
-        wordsImg.style.transform = `translateX(${scrollPosition * 0.1}px)`; // Adjust horizontal position
-      }
-    };
+  useEffect(() => {}, []);
 
-    window.addEventListener("scroll", handleScroll); // Listen for scroll events
-    return () => {
-      window.removeEventListener("scroll", handleScroll); // Clean up the event listener
-    };
-  }, []);
 
-  
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -69,11 +56,35 @@ function App() {
         </section>
       </section>
 
+      <img src = "images/page1bg2.png" className = "bg2"/>
 
       <section id="about" className="about">
-      <img src = "images/page1bg2.png" className = "bg2"/>
         <section id="about-content" className='about-content fade-in'> 
           <img src = "images/learnallaboutme.png" className="about-img1"/>
+
+          <section id = "work-experience" className= "work-experience">
+            <div class= "work-experience-box">
+              <h1 className="work-experience-title">Pivotal Energy Solutions (Current)</h1>
+              <div className="work-experience-content">
+                <p>Software Engineering Intern at <a href="https://pivotalenergysolutions.com/" target ="blank" className="work-link">Pivotal Energy Solutions</a></p>
+                <p>Since Apr 2024</p>
+                <p>Enhanced application coverage by developing and debugging test methods across 50+ files.</p>
+              </div>
+              </div>
+          </section>
+
+          <section id = "work-experience" className= "work-experience">
+            <div class= "work-experience-box">
+              <h1 className="work-experience-title">TheCoderSchool (Past)</h1>
+              <div className="work-experience-content">
+                <p>Code Coach and Curriculum Developer at <a href="https://www.thecoderschool.com/locations/gilbert/" target ="blank" className="work-link">TheCoderSchool</a></p>
+                <p>Sep 2022 - June 2024</p>
+                <p>Taught Java, Python, and Scratch to over 30 students in weekly coding sessions.</p>
+              </div>
+              </div>
+          </section>
+
+          <button class="resume-btn">My Complete Resume</button>
         </section>
 
         <section id="skills-content" className='skills-content fade-in'> 
@@ -114,7 +125,6 @@ function App() {
             </div>
           </div>
           </section>
-          <img src = "images/words.png" className="words-img"/>
         </section>
       </section>
 
@@ -219,9 +229,58 @@ function App() {
 
        {/* end of project cards */}
         </section>
-      </section>
 
-  
+        <section id="wips-content" className='wips-content fade-in'>
+          <img src = "images/wips.png" className="wips-img"/>
+
+          <div className="wip-cards-container">
+          <section className="wip-card">
+            <h1 className="wip-title">Totally Tech</h1>
+            <div className="wip-tags">
+              <span className="tag">AI/ML</span>
+              <span className="tag">Cybersecurity</span>
+              <span className="tag">Social</span>
+            </div>
+            <div className="wip-content">
+              <img src="images/totallytech.png" className="wip-image" />
+              <p className="wip-description">
+              By fostering supportive networks and sharing stories about tech issues that matter to them, we can empower women to confidently engage and even lead in the field.
+              </p>
+            </div>
+            <img src = "images/projectline.png" className="wip-line" />
+            <div className="project-links">
+              <a href="https://github.com/nadiashovkovy/totally-tech" target ="blank" className="project-link">
+                <img src="images/icon.png" alt="icon" className="link-icon" />
+                In-Progress Code</a>
+            </div>  
+          </section>
+
+          <section className="wip-card">
+            <h1 className="wip-title">Ichigo</h1>
+            <div className="wip-tags">
+              <span className="tag">Unity</span>
+              <span className="tag">Graphics</span>
+              <span className="tag">C#</span>
+              <span className="tag">Video Game</span>
+            </div>
+            <div className="wip-content">
+              <img src="images/tomorrow.png" className="wip-image" />
+              <p className="wip-description">
+              In Gabrielle Zevin's novel "Tomorrow, and Tomorrow, and Tomorrow," Ichigo is a game created by Sam and Sadie while they are in college. I am attempting to recreate this fictional game in Unity.
+              </p>
+            </div>
+            <img src = "images/projectline.png" className="wip-line" />
+            <div className="project-links">
+              <a href="https://github.com/nadiashovkovy" target ="blank" className="project-link">
+                <img src="images/icon.png" alt="icon" className="link-icon" />
+                In-Progress Code</a>
+            </div>  
+          </section>
+          </div>
+
+        </section>
+
+      </section>
 
       <section id = "contact" className="contact"> 
 
