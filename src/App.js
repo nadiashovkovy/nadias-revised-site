@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 100); 
     return () => clearTimeout(timer);
-  }, []);
+  }, [setIsVisible]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
