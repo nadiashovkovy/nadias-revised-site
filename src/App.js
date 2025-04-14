@@ -86,7 +86,7 @@ function App() {
               </div>
           </section>
 
-          <button class="resume-btn" onClick={() => window.open("https://docs.google.com/document/d/186M1_Q00dXBVX05e31C9_-zDlmeups3Pqb--8ydOx4Y/edit?usp=sharing", "_blank")}> My Complete Resume</button>
+          <button class="resume-btn enlarge-text-on-hover" onClick={() => window.open("https://docs.google.com/document/d/186M1_Q00dXBVX05e31C9_-zDlmeups3Pqb--8ydOx4Y/edit?usp=sharing", "_blank")}> My Complete Resume</button>
         </section>
 
         <section id="skills-content" className='skills-content fade-in'> 
@@ -163,7 +163,7 @@ function App() {
           <div className="project-links">
             <a href="https://eco-iq.netlify.app/" target ="blank" className="project-link">
               <img src="images/icon.png" alt="icon" className="link-icon" />
-              Live Demo</a>
+              Demo</a>
             <a href="https://youtu.be/gbt07IEEAIY?feature=shared" target ="blank" className="project-link">
               <img src="images/icon.png" alt="icon" className="link-icon" />
               Video</a>
@@ -319,7 +319,7 @@ function App() {
               <input type="email" placeholder="Email"></input>
               <p>Message*</p>
               <textarea placeholder="Message" rows="6" cols="20"></textarea>
-              <button class="real-btn3 enlarge-on-hover">Send Message</button>
+              <button class="real-btn3 enlarge-text-on-hover">Send Message</button>
           </section>
           <img src ="images/Illustration.png"  alt = "illustration" className = "footer-img fade-in"/>
       </section>
