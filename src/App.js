@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './styles.css';
 
 function App() {
   useEffect(() => {}, []);
 
 
-  const [isVisible, setIsVisible] = useState(false);
+  const [setIsVisible] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 100); 
@@ -50,21 +49,21 @@ function App() {
       </header>
 
       <section id="home" className="home">
-        <img src = "images/page1bg1.png" className = "bg"/>
+        <img src = "images/page1bg1.png" alt = "bg1" className = "bg"/>
         <section id="home-content" className='home-content'> 
-          <img src = "images/welcomeimg.png" className="welcome-img" />
+          <img src = "images/welcomeimg.png"  alt = "welcome" className="welcome-img" />
         </section>
       </section>
 
-      <img src = "images/page1bg2.png" className = "bg2"/>
+      <img src = "images/page1bg2.png" alt = "bg2" className = "bg2"/>
 
       <section id="about" className="about">
         <section id="about-content" className='about-content fade-in'> 
-          <img src = "images/learnallaboutme.png" className="about-img1"/>
+          <img src = "images/learnallaboutme.png"  alt = "learnabtme" className="about-img1"/>
 
-          <img src = "images/abtme.png" className = "about-img2"/>
+          <img src = "images/abtme.png"  alt = "abtme" className = "about-img2"/>
           
-          <img src = "images/workexp.png" className="about-img3"/>
+          <img src = "images/workexp.png"  alt = "abtme"  className="about-img3"/>
           <section id = "work-experience" className= "work-experience">
             <div class= "work-experience-box">
               <h1 className="work-experience-title">Pivotal Energy Solutions (Current)</h1>
@@ -91,7 +90,7 @@ function App() {
         </section>
 
         <section id="skills-content" className='skills-content fade-in'> 
-          <img src = "images/afewskills.png" className="about-img1"/>
+          <img src = "images/afewskills.png"  alt = "skills" className="about-img1"/>
 
 
           <section id = "skills-boxes" className= "skills-boxes">
@@ -136,9 +135,9 @@ function App() {
 
 
       <section id="projects" className="projects">
-        <img src = "images/projectsbg1.png" className = "bg1"/>
+        <img src = "images/projectsbg1.png"  alt = "projects" className = "bg1"/>
         <section id="projects-content" className='projects-content fade-in'> 
-        <img src = "images/checkout.png" className="project-img1"/>
+        <img src = "images/checkout.png"  alt = "projects" className="project-img1"/>
 
 
         {/* // my projects: */}
@@ -160,7 +159,7 @@ function App() {
           <p className="project-details">
             I built this project using React (combining languages like JavaScript, Python & CSS) and I deployed it using Render (backend) and Netlify (frontend). I also integrated OpenAI by obtaining and implementing an API key.
           </p>
-          <img src = "images/projectline.png" className="project-line" />
+          <img src = "images/projectline.png"  alt = "line" className="project-line" />
           <div className="project-links">
             <a href="https://eco-iq.netlify.app/" target ="blank" className="project-link">
               <img src="images/icon.png" alt="icon" className="link-icon" />
@@ -182,7 +181,7 @@ function App() {
             <span className="tag">Firebase</span>
           </div>
           <div className="project-content">
-            <img src="images/VolunTeen.png" className="project-image" />
+            <img src="images/VolunTeen.png"  alt = "volunteen" className="project-image" />
             <p className="project-description">
             VolunTeen is an iOS app that aims to connect high school students with volunteering events near them. With Firebase integration, my app offers reliable user authentication. Additonally, my app contains a home view, a search view, a chat view (with real in-app messaging) a map viow, and a profile view. 
             </p>
@@ -190,7 +189,7 @@ function App() {
           <p className="project-details">
             When I began programming VolunTeen, I had absolutely no prior knowledge of Swift or SwiftUI. Choosing to use these programming languages was a massive learning curve and I spent dozens of hours watching YouTube tutorials 
           </p>
-          <img src = "images/projectline.png" className="project-line" />
+          <img src = "images/projectline.png"  alt = "line" className="project-line" />
           <div className="project-links">
             <a href="https://youtu.be/DiOY3Yxt-EM?feature=shared" target ="blank" className="project-link">
               <img src="images/icon.png" alt="icon" className="link-icon" />
@@ -209,7 +208,7 @@ function App() {
             <span className="tag">AI/ML</span>
           </div>
           <div className="project-content">
-            <img src="images/maskrcnn.png" className="project-image" />
+            <img src="images/maskrcnn.png"  alt = "research" className="project-image" />
             <p className="project-description">
             In my resarch project, I discussed how Mask R-CNN sets itself apart from other object detectors. I also performed transfer learning with a Mask R-CNN (pre-trained with the COCO2017 dataset) using Pytorch in Google Colab. My model produced highly precise borders, masks, and bounding box outputs. 
             </p>
@@ -217,7 +216,7 @@ function App() {
           <p className="project-details">
           This project was made for my Honors Resarch class and it mainly served as an introduction to artificial intelligence for me. I placed second in my district's science fair. 
           </p>
-          <img src = "images/projectline.png" className="project-line" />
+          <img src = "images/projectline.png"  alt = "line" className="project-line" />
           <div className="project-links">
             <a href="https://docs.google.com/presentation/d/1CcjcqhZQZ-sD7np40zYBHHCXuLbPojKV/edit?usp=sharing&ouid=114431329760915144189&rtpof=true&sd=true" target ="blank" className="project-link">
               <img src="images/icon.png" alt="icon" className="link-icon" />
@@ -237,7 +236,7 @@ function App() {
             <span className="tag">Robotics</span>
           </div>
           <div className="project-content">
-            <img src="images/kidsintech.png" className="project-image" />
+            <img src="images/kidsintech.png"  alt = "kidsintech" className="project-image" />
             <p className="project-description">
             In 2022, I started a volunteering organization teaching engineering/coding at elementary schools. I also spearheaded the creation of a school’s First Lego League team, built the organization’s website, and accumulated 150+ volunteer hours.
             </p>
@@ -245,7 +244,7 @@ function App() {
           <p className="project-details">
             Through this organization, we were able to help hundreds of students learn how to become engineers via block coding and various robotics workshop.
           </p>
-          <img src = "images/projectline.png" className="project-line" />
+          <img src = "images/projectline.png"  alt = "line" className="project-line" />
           <div className="project-links">
             <a href="https://kidsintech-arizona.webflow.io/" target ="blank" className="project-link">
               <img src="images/icon.png" alt="icon" className="link-icon" />
@@ -259,7 +258,7 @@ function App() {
         </section>
 
         <section id="wips-content" className='wips-content fade-in'>
-          <img src = "images/wips.png" className="wips-img"/>
+          <img src = "images/wips.png"  alt = "wips" className="wips-img"/>
 
           <div className="wip-cards-container">
           <section className="wip-card">
@@ -270,12 +269,12 @@ function App() {
               <span className="tag">Social</span>
             </div>
             <div className="wip-content">
-              <img src="images/totallytech.png" className="wip-image" />
+              <img src="images/totallytech.png"  alt = "tt" className="wip-image" />
               <p className="wip-description">
               By fostering supportive networks and sharing stories about tech issues that matter to them, we can empower women to confidently engage and even lead in the field.
               </p>
             </div>
-            <img src = "images/projectline.png" className="wip-line" />
+            <img src = "images/projectline.png"  alt = "tt" className="wip-line" />
             <div className="project-links">
               <a href="https://github.com/nadiashovkovy/totally-tech" target ="blank" className="project-link">
                 <img src="images/icon.png" alt="icon" className="link-icon" />
@@ -292,12 +291,12 @@ function App() {
               <span className="tag">Video Game</span>
             </div>
             <div className="wip-content">
-              <img src="images/tomorrow.png" className="wip-image" />
+              <img src="images/tomorrow.png"  alt = "ichigo" className="wip-image" />
               <p className="wip-description">
               In Gabrielle Zevin's novel "Tomorrow, and Tomorrow, and Tomorrow," Ichigo is a game created by Sam and Sadie while they are in college. I am attempting to recreate this fictional game in Unity.
               </p>
             </div>
-            <img src = "images/projectline.png" className="wip-line" />
+            <img src = "images/projectline.png"  alt = "line" className="wip-line" />
             <div className="project-links">
               <a href="https://github.com/nadiashovkovy" target ="blank" className="project-link">
                 <img src="images/icon.png" alt="icon" className="link-icon" />
@@ -322,7 +321,7 @@ function App() {
               <textarea placeholder="Message" rows="6" cols="20"></textarea>
               <button class="real-btn3 enlarge-on-hover">Send Message</button>
           </section>
-          <img src ="images/Illustration.png" className = "footer-img fade-in" alt="Footer Illustration"/>
+          <img src ="images/Illustration.png"  alt = "illustration" className = "footer-img fade-in"/>
       </section>
 
       <section id = "socials" className = "socials">
