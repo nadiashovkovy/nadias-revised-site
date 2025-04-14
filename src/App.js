@@ -90,7 +90,7 @@ function App() {
         </section>
 
         <section id="skills-content" className='skills-content fade-in'> 
-          <img src = "images/afewskills.png"  alt = "skills" className="about-img1"/>
+          <img src = "images/afewskills.png"  alt = "skills" className="about-img4"/>
 
 
           <section id = "skills-boxes" className= "skills-boxes">

@@ -111,7 +111,7 @@ nav a {
     transform: translate(-50%, -50%); /* Center the image */
     width: 75%; /* Adjust size as needed */
     z-index: 2;
-    margin-bottom: 5%;
+    margin-bottom: 15%;
 }
 
 .about-img2 {
@@ -129,6 +129,14 @@ nav a {
   transform: translate(-50%, -50%); /* Center the image */
   width: 75%; /* Adjust size as needed */
   margin-bottom: 5%;
+  z-index: 2;
+}
+
+.about-img4 {
+  position: relative;
+  left: 50%; /* Adjust horizontal position */
+  transform: translate(-50%, -50%); /* Center the image */
+  width: 75%; /* Adjust size as needed */
   z-index: 2;
 }
 
