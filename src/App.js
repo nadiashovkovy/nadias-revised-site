@@ -62,6 +62,9 @@ function App() {
         <section id="about-content" className='about-content fade-in'> 
           <img src = "images/learnallaboutme.png" className="about-img1"/>
 
+          <img src = "images/abtme.png" className = "about-img2"/>
+          
+          <img src = "images/workexp.png" className="about-img3"/>
           <section id = "work-experience" className= "work-experience">
             <div class= "work-experience-box">
               <h1 className="work-experience-title">Pivotal Energy Solutions (Current)</h1>
@@ -84,7 +87,7 @@ function App() {
               </div>
           </section>
 
-          <button class="resume-btn">My Complete Resume</button>
+          <button class="resume-btn" onClick={() => window.open("https://docs.google.com/document/d/186M1_Q00dXBVX05e31C9_-zDlmeups3Pqb--8ydOx4Y/edit?usp=sharing", "_blank")}> My Complete Resume</button>
         </section>
 
         <section id="skills-content" className='skills-content fade-in'> 
@@ -222,6 +225,31 @@ function App() {
             <a href="https://colab.research.google.com/drive/1JkGjOoxuPw9uFBMJsBpK7EFeSgKrJioR?usp=sharing" target ="blank" className="project-link">
               <img src="images/icon.png" alt="icon" className="link-icon" />
               Public Code</a>
+          </div>  
+      </section>
+
+
+      <section className="project-card">
+          <h1 className="project-title">Kids in Tech</h1>
+          <div className="project-tags">
+            <span className="tag">Community Service</span>
+            <span className="tag">Education</span>
+            <span className="tag">Robotics</span>
+          </div>
+          <div className="project-content">
+            <img src="images/kidsintech.png" className="project-image" />
+            <p className="project-description">
+            In 2022, I started a volunteering organization teaching engineering/coding at elementary schools. I also spearheaded the creation of a school’s First Lego League team, built the organization’s website, and accumulated 150+ volunteer hours.
+            </p>
+          </div>
+          <p className="project-details">
+            Through this organization, we were able to help hundreds of students learn how to become engineers via block coding and various robotics workshop.
+          </p>
+          <img src = "images/projectline.png" className="project-line" />
+          <div className="project-links">
+            <a href="https://kidsintech-arizona.webflow.io/" target ="blank" className="project-link">
+              <img src="images/icon.png" alt="icon" className="link-icon" />
+              Live Site</a>
           </div>  
       </section>
 

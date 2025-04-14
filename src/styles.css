@@ -114,6 +114,24 @@ nav a {
     margin-bottom: 15%;
 }
 
+.about-img2 {
+  position: relative;
+  margin-top: 15%;
+  left: 50%; /* Adjust horizontal position */
+  transform: translate(-50%, -50%); /* Center the image */
+  width: 75%; /* Adjust size as needed */
+  z-index: 2;
+}
+
+.about-img3 {
+  position: relative;
+  left: 50%; /* Adjust horizontal position */
+  transform: translate(-50%, -50%); /* Center the image */
+  width: 75%; /* Adjust size as needed */
+  margin-bottom: 15%;
+  z-index: 2;
+}
+
 .about {
   position: relative;
   padding-top: 15%;
@@ -151,7 +169,7 @@ nav a {
   color: rgb(255, 255, 255);
   background: #A6D7BF;
   padding: 10px 20px;
-  border-radius: 10px;
+  border-radius: 50px;
   border-color: #00000000;
   margin-top: -10%;
   margin-bottom: 10%;
