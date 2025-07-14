@@ -143,6 +143,30 @@ function App() {
         {/* // my projects: */}
 
         <section className="project-card">
+          <h1 className="project-title">Thryve</h1>
+          <div className="project-tags">
+            <span className="tag">Entrepreneurship</span>
+            <span className="tag">Figma</span>
+            <span className="tag">Women-in-Tech</span>
+          </div>
+          <div className="project-content">
+            <img src="images/Thryve.png" alt="Thryve Mockup" className="project-image" />
+            <p className="project-description">
+              Thryve is a novel professional social network that aims to create professional visibility and engagement through diverse communities.
+            </p>
+          </div>
+          <p className="project-details">
+            This is a project I began while taking ASU's Entrepreneur & Value Creation course (FSE301), I was inspired to design and pitch this idea because as a woman in computer science, I feel like an outsider on current professional social networks.
+          </p>
+          <img src = "images/projectline.png"  alt = "line" className="project-line" />
+          <div className="project-links">
+            <a href="https://eco-iq.netlify.app/" target ="blank" className="project-link">
+              <img src="images/icon.png" alt="icon" className="link-icon" />
+              Pitch Video</a>
+          </div>  
+      </section>
+
+        <section className="project-card">
           <h1 className="project-title">Eco-IQ</h1>
           <div className="project-tags">
             <span className="tag">Hackathon</span>
