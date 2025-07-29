@@ -185,9 +185,12 @@ function App() {
           </p>
           <img src = "images/projectline.png"  alt = "line" className="project-line" />
           <div className="project-links">
+            <a href="https://nadiashovkovy.github.io/eco-iq-site/" target ="blank" className="project-link">
+              <img src="images/icon.png" alt="icon" className="link-icon" />
+              Website</a>
             <a href="https://eco-iq.netlify.app/" target ="blank" className="project-link">
               <img src="images/icon.png" alt="icon" className="link-icon" />
-              Demo</a>
+              Service Site</a>
             <a href="https://youtu.be/gbt07IEEAIY?feature=shared" target ="blank" className="project-link">
               <img src="images/icon.png" alt="icon" className="link-icon" />
               Video</a>
