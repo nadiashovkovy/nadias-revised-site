@@ -142,7 +142,7 @@ function App() {
 
         {/* // my projects: */}
         <section className="project-card">
-          <h1 className="project-title">Thryve</h1>
+          <h1 className="project-title">StorySprout</h1>
           <div className="project-tags">
             <span className="tag">Hackathon</span>
             <span className="tag">Stable Diffusion</span>
@@ -152,7 +152,7 @@ function App() {
           <div className="project-content">
             <img src="images/story-sprout.png" alt="Story-Sprout" className="project-image" />
             <p className="project-description">
-              The world's first inclusive, adaptive AI storytelling site that makes every child the hero — reflecting their unique identity, abilities, and imagination.
+              Inclusive, adaptive AI storytelling site that makes every child the hero — reflecting their unique identity, abilities, and imagination.
             </p>
           </div>
           <p className="project-details">
