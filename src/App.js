@@ -141,6 +141,33 @@ function App() {
 
 
         {/* // my projects: */}
+        <section className="project-card">
+          <h1 className="project-title">Thryve</h1>
+          <div className="project-tags">
+            <span className="tag">Hackathon</span>
+            <span className="tag">Stable Diffusion</span>
+            <span className="tag">Text-To-Speech</span>
+            <span className="tag">Inclusion</span>
+          </div>
+          <div className="project-content">
+            <img src="images/story-sprout.png" alt="Story-Sprout" className="project-image" />
+            <p className="project-description">
+              The world's first inclusive, adaptive AI storytelling site that makes every child the hero — reflecting their unique identity, abilities, and imagination.
+            </p>
+          </div>
+          <p className="project-details">
+            This is a project I built for ASU's 2025 SunHacks Hackathon. I built StorySprout as a React website (combining Typescript and CSS). I used “Claude Sonnet 4” to generate personalized stories, Stable Diffusion to create the illustrations, and the ElevenLabs API for text-to-speech narration.
+          </p>
+          <img src = "images/projectline.png"  alt = "line" className="project-line" />
+          <div className="project-links">
+            <a href="https://story-sprout.netlify.app/" target ="blank" className="project-link">
+              <img src="images/icon.png" alt="icon" className="link-icon" />
+              Website</a>
+            <a href="https://github.com/nadiashovkovy/Story-Sprout" target ="blank" className="project-link">
+              <img src="images/icon.png" alt="icon" className="link-icon" />
+              Public Code</a>
+          </div>  
+        </section>
 
         <section className="project-card">
           <h1 className="project-title">Thryve</h1>
