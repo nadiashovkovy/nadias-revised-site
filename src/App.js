@@ -1,16 +1,65 @@
 import React, { useEffect, useState } from 'react';
+import emailjs from '@emailjs/browser';
 import './styles.css';
 
 function App() {
-  useEffect(() => {}, []);
+  useEffect(() => {
+    // Initialize EmailJS with your public key
+    emailjs.init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
+  }, []);
 
-
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [formStatus, setFormStatus] = useState('');
   const [setIsVisible] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 100); 
     return () => clearTimeout(timer);
   }, [setIsVisible]);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    if (!formData.name || !formData.email || !formData.message) {
+      setFormStatus('Please fill in all fields');
+      return;
+    }
+
+    setFormStatus('sending');
+
+    emailjs.send(
+      process.env.REACT_APP_EMAILJS_SERVICE_ID,
+      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+      {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+        to_email: 'codebynadia@gmail.com'
+      }
+    )
+    .then(() => {
+      setFormStatus('success');
+      setFormData({ name: '', email: '', message: '' });
+      setTimeout(() => setFormStatus(''), 5000);
+    })
+    .catch((error) => {
+      console.error('EmailJS Error:', error);
+      setFormStatus('error');
+      setTimeout(() => setFormStatus(''), 5000);
+    });
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -40,10 +89,10 @@ function App() {
       <header className="header">
         <nav className="fade-in">
             <ul>
-                <li><a href="#home"class="enlarge-text-on-hover">welcome</a></li>
-                <li><a href="#about"class="enlarge-text-on-hover">about</a></li>
-                <li><a href="#projects" class="enlarge-text-on-hover">projects</a></li>
-                <li><a href="#contact"class="enlarge-text-on-hover">contact</a></li>
+                <li><a href="#home" className="enlarge-text-on-hover">welcome</a></li>
+                <li><a href="#about" className="enlarge-text-on-hover">about</a></li>
+                <li><a href="#projects" className="enlarge-text-on-hover">projects</a></li>
+                <li><a href="#contact" className="enlarge-text-on-hover">contact</a></li>
             </ul>
         </nav>
       </header>
@@ -66,10 +115,28 @@ function App() {
           <img src = "images/workexp.png"  alt = "abtme"  className="about-img3"/>
           <section id = "work-experience" className= "work-experience">
             <div class= "work-experience-box">
-              <h1 className="work-experience-title">Pivotal Energy Solutions (Current)</h1>
+              <h3 className="work-experience-title">ServiceNow (Santa Clara)</h3>
+              <div className="work-experience-content">
+                <p>Incoming Software Engineering Intern at <a href="https://servicenow.com/" target ="blank" className="work-link">ServiceNow</a></p>
+                <p>May 2026 - Jul 2027</p>
+              </div>
+              </div>
+          </section>
+          <section id = "work-experience" className= "work-experience">
+            <div class= "work-experience-box">
+              <h3 className="work-experience-title">The Luminosity Lab @ ASU</h3>
+              <div className="work-experience-content">
+                <p>Research Aide at <a href="https://theluminositylab.com/" target ="blank" className="work-link">Pivotal Energy Solutions</a></p>
+                <p>Since Apr 2024</p>
+              </div>
+              </div>
+          </section>
+          <section id = "work-experience" className= "work-experience">
+            <div class= "work-experience-box">
+              <h3 className="work-experience-title">Pivotal Energy Solutions</h3>
               <div className="work-experience-content">
                 <p>Software Engineering Intern at <a href="https://pivotalenergysolutions.com/" target ="blank" className="work-link">Pivotal Energy Solutions</a></p>
-                <p>Since Apr 2024</p>
+                <p>Apr 2024 - Nov 2025</p>
                 <p>Enhanced application coverage by developing and debugging test methods across 50+ files.</p>
               </div>
               </div>
@@ -77,7 +144,7 @@ function App() {
 
           <section id = "work-experience" className= "work-experience">
             <div class= "work-experience-box">
-              <h1 className="work-experience-title">TheCoderSchool (Past)</h1>
+              <h3 className="work-experience-title">TheCoderSchool</h3>
               <div className="work-experience-content">
                 <p>Code Coach and Curriculum Developer at <a href="https://www.thecoderschool.com/locations/gilbert/" target ="blank" className="work-link">TheCoderSchool</a></p>
                 <p>Sep 2022 - June 2024</p>
@@ -363,19 +430,51 @@ function App() {
 
       </section>
 
-      <section id = "contact" className="contact"> 
-
+      <section id="contact" className="contact"> 
           <section id="contact-content" className='contact-content fade-in'>
-            <button class="fake-btn">contact me!</button>
+            <div className="fake-btn">contact me!</div>
+            <form onSubmit={handleSubmit} className="contact-form">
               <p>Name*</p>
-              <input type="text" placeholder="Name"></input>
+              <input 
+                type="text" 
+                name="name"
+                placeholder="Name"
+                value={formData.name}
+                onChange={handleInputChange}
+                required
+              />
               <p>Email*</p>
-              <input type="email" placeholder="Email"></input>
+              <input 
+                type="email" 
+                name="email"
+                placeholder="Email"
+                value={formData.email}
+                onChange={handleInputChange}
+                required
+              />
               <p>Message*</p>
-              <textarea placeholder="Message" rows="6" cols="20"></textarea>
-              <button class="real-btn3 enlarge-text-on-hover">Send Message</button>
+              <textarea 
+                name="message"
+                placeholder="Message" 
+                rows="6" 
+                cols="20"
+                value={formData.message}
+                onChange={handleInputChange}
+                required
+              />
+              <button 
+                type="submit" 
+                className="real-btn3 enlarge-text-on-hover"
+                disabled={formStatus === 'sending'}
+              >
+                {formStatus === 'sending' ? 'Sending...' : 'Send Message'}
+              </button>
+              {formStatus === 'success' && <p className="form-message success">Message sent successfully!</p>}
+              {formStatus === 'error' && <p className="form-message error">Failed to send. Please try again.</p>}
+              {formStatus && formStatus !== 'sending' && formStatus !== 'success' && formStatus !== 'error' && <p className="form-message error">{formStatus}</p>}
+            </form>
           </section>
-          <img src ="images/Illustration.png"  alt = "illustration" className = "footer-img fade-in"/>
+          <img src="images/Illustration.png" alt="illustration" className="footer-img fade-in"/>
       </section>
 
       <section id = "socials" className = "socials">
