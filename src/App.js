@@ -126,7 +126,7 @@ function App() {
             <div class= "work-experience-box">
               <h3 className="work-experience-title">The Luminosity Lab @ ASU</h3>
               <div className="work-experience-content">
-                <p>Research Aide at <a href="https://theluminositylab.com/" target ="blank" className="work-link">Pivotal Energy Solutions</a></p>
+                <p>Research Aide at <a href="https://theluminositylab.com/" target ="blank" className="work-link">The Luminosity Lab @ ASU</a></p>
                 <p>Since Apr 2024</p>
               </div>
               </div>
