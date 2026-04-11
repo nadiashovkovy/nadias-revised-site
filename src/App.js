@@ -118,7 +118,7 @@ function App() {
               <h3 className="work-experience-title">ServiceNow (Santa Clara)</h3>
               <div className="work-experience-content">
                 <p>Incoming Software Engineering Intern at <a href="https://servicenow.com/" target ="blank" className="work-link">ServiceNow</a></p>
-                <p>May 2026 - Jul 2027</p>
+                <p>May 2026 - Jul 2026</p>
               </div>
               </div>
           </section>
