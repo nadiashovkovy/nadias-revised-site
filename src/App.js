@@ -39,6 +39,25 @@ function App() {
 
     setFormStatus('sending');
 
+    // Log the submission to a Google Sheet via Apps Script web app.
+    // Uses no-cors + text/plain to avoid a CORS preflight, which Apps Script
+    // doesn't handle. We can't read the response, so this is fire-and-forget
+    // and never blocks the email send or the success/error UI below.
+    if (process.env.REACT_APP_SHEET_WEBAPP_URL) {
+      fetch(process.env.REACT_APP_SHEET_WEBAPP_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message
+        })
+      }).catch((error) => {
+        console.error('Sheet logging error:', error);
+      });
+    }
+
     emailjs.send(
       process.env.REACT_APP_EMAILJS_SERVICE_ID,
       process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
