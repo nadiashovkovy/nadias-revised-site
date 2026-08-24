@@ -1,13 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import emailjs from '@emailjs/browser';
 import './styles.css';
 
 function App() {
-  useEffect(() => {
-    // Initialize EmailJS with your public key
-    emailjs.init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
-  }, []);
-
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -39,42 +33,28 @@ function App() {
 
     setFormStatus('sending');
 
-    // Log the submission to a Google Sheet via Apps Script web app.
-    // Uses no-cors + text/plain to avoid a CORS preflight, which Apps Script
-    // doesn't handle. We can't read the response, so this is fire-and-forget
-    // and never blocks the email send or the success/error UI below.
-    if (process.env.REACT_APP_SHEET_WEBAPP_URL) {
-      fetch(process.env.REACT_APP_SHEET_WEBAPP_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          message: formData.message
-        })
-      }).catch((error) => {
-        console.error('Sheet logging error:', error);
-      });
-    }
-
-    emailjs.send(
-      process.env.REACT_APP_EMAILJS_SERVICE_ID,
-      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-      {
-        from_name: formData.name,
-        from_email: formData.email,
-        message: formData.message,
-        to_email: 'codebynadia@gmail.com'
-      }
-    )
+    // Submit to the Google Sheet via Apps Script web app.
+    // Uses no-cors + text/plain to avoid a CORS preflight (Apps Script doesn't
+    // handle preflight requests), so the response body can't be read. A fetch
+    // that resolves (rather than throws) means the request reached Google, so
+    // we treat that as success; only a network-level failure is an error.
+    fetch(process.env.REACT_APP_SHEET_WEBAPP_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        message: formData.message
+      })
+    })
     .then(() => {
       setFormStatus('success');
       setFormData({ name: '', email: '', message: '' });
       setTimeout(() => setFormStatus(''), 5000);
     })
     .catch((error) => {
-      console.error('EmailJS Error:', error);
+      console.error('Sheet submission error:', error);
       setFormStatus('error');
       setTimeout(() => setFormStatus(''), 5000);
     });
