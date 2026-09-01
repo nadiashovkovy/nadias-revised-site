@@ -9,7 +9,7 @@ export default function Hero() {
       <div className="hero-inner">
         <div className="hero-copy">
           <p className="hero-eyebrow reveal-up" style={{ '--i': 0 }}>
-            Hi! I'm Nadia Shovkovy
+            Hi! I'm Nadia Shovkovy.
           </p>
           <h1 className="hero-title reveal-up" style={{ '--i': 1 }}>
             I build full-stack, <em>user-centric</em> products.

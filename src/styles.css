@@ -92,7 +92,7 @@
   --mint: #3b5a4b;
   --mint-deep: #7fc9a5;
   --blue: #25364f;
-  --blue-bright: #7bb2f6;
+  --blue-bright: #9dc7fa;
   --blue-deep: #4f86e6;
   --cream: #17161a;
   --bg: #16151a;
@@ -266,7 +266,9 @@ textarea {
   cursor: text;
 }
 
-/* soft ambient background blobs instead of multi-MB PNGs */
+/* soft ambient background blobs instead of multi-MB PNGs.
+   Light-mode colours are deeper/more saturated so they read against the cream
+   page; dark mode keeps the paler glow that pops on a near-black background. */
 body::before {
   content: '';
   position: fixed;
@@ -274,11 +276,18 @@ body::before {
   z-index: -1;
   pointer-events: none;
   background:
+    radial-gradient(42vw 42vw at 8% -6%, rgba(255, 170, 120, 0.55), transparent 60%),
+    radial-gradient(38vw 38vw at 100% 12%, rgba(146, 193, 250, 0.5), transparent 60%),
+    radial-gradient(46vw 46vw at 50% 108%, rgba(122, 205, 165, 0.5), transparent 60%);
+  animation: bg-drift 30s ease-in-out infinite;
+  will-change: transform;
+}
+
+:root[data-theme='dark'] body::before {
+  background:
     radial-gradient(42vw 42vw at 8% -6%, rgba(255, 198, 173, 0.5), transparent 60%),
     radial-gradient(38vw 38vw at 100% 12%, rgba(220, 232, 251, 0.55), transparent 60%),
     radial-gradient(46vw 46vw at 50% 108%, rgba(166, 215, 191, 0.45), transparent 60%);
-  animation: bg-drift 30s ease-in-out infinite;
-  will-change: transform;
 }
 
 @keyframes bg-drift {
