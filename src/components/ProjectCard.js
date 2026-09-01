@@ -19,12 +19,15 @@ function LinkRow({ links }) {
   );
 }
 
-export default function ProjectCard({ project }) {
+export default function ProjectCard({ project, index = 0 }) {
   const { title, tags, stack, role, blurb, details, links, variant } = project;
   const isFeatured = variant === 'featured';
 
   return (
-    <article className={`project-card ${isFeatured ? 'is-featured' : ''} fade-in`}>
+    <article
+      className={`project-card ${isFeatured ? 'is-featured' : ''} fade-in`}
+      style={{ '--i': index }}
+    >
       <div className="project-body">
         <div className="project-heading">
           <h3 className="project-title">{title}</h3>

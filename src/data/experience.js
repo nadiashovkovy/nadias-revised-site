@@ -40,7 +40,7 @@ const experience = [
   {
     id: 'persue',
     org: 'Persue Lab @ ASU',
-    href: null,
+    href: 'https://persue-lab-asu.github.io/',
     role: 'Security Engineer & Researcher',
     location: 'Tempe, AZ',
     dates: 'Nov 2024 – Jul 2025',

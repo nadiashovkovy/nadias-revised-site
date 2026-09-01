@@ -47,16 +47,16 @@ export default function Projects() {
 
       {featured.length > 0 && (
         <div className="project-featured-list">
-          {featured.map((p) => (
-            <ProjectCard key={p.id} project={p} />
+          {featured.map((p, i) => (
+            <ProjectCard key={p.id} project={p} index={i} />
           ))}
         </div>
       )}
 
       {standard.length > 0 && (
         <div className="project-grid">
-          {standard.map((p) => (
-            <ProjectCard key={p.id} project={p} />
+          {standard.map((p, i) => (
+            <ProjectCard key={p.id} project={p} index={i} />
           ))}
         </div>
       )}
@@ -64,8 +64,8 @@ export default function Projects() {
       <div className="wip-block fade-in">
         <h3 className="wip-heading">Works in progress</h3>
         <div className="project-grid">
-          {wips.map((p) => (
-            <ProjectCard key={p.id} project={p} />
+          {wips.map((p, i) => (
+            <ProjectCard key={p.id} project={p} index={i} />
           ))}
         </div>
       </div>

@@ -9,16 +9,15 @@ export default function Hero() {
       <div className="hero-inner">
         <div className="hero-copy">
           <p className="hero-eyebrow reveal-up" style={{ '--i': 0 }}>
-            Nadia Shovkovy
+            Hi! I'm Nadia Shovkovy
           </p>
           <h1 className="hero-title reveal-up" style={{ '--i': 1 }}>
             I build full-stack, <em>user-centric</em> products.
           </h1>
           <p className="hero-lead reveal-up" style={{ '--i': 2 }}>
-            Computer Science student at ASU’s Barrett Honors College and an previous
+            Computer Science student at ASU’s Barrett Honors College and a previous
             Software Engineer Intern at ServiceNow. I like turning messy real-world
-            problems into interfaces people actually want to use — from AI
-            storytelling to platforms for social good.
+            problems into software solutions people actually want to use.
           </p>
           <div className="hero-actions reveal-up" style={{ '--i': 3 }}>
             <a className="btn btn-primary" href="#projects">
