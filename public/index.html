@@ -25,6 +25,23 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Meet Nadia Shovkovy</title>
+    <script>
+      // Set the theme before first paint to avoid a light flash.
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var dark =
+            stored === 'dark' ||
+            (!stored &&
+              window.matchMedia &&
+              window.matchMedia('(prefers-color-scheme: dark)').matches);
+          document.documentElement.setAttribute(
+            'data-theme',
+            dark ? 'dark' : 'light'
+          );
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

@@ -8,7 +8,6 @@ const experience = [
     role: 'Software Engineer Intern',
     location: 'Santa Clara, CA',
     dates: 'May 2026 – Jul 2026',
-    upcoming: true,
     bullets: [
       'Building a full-stack Accessibility Workspace Hub for the A11y team — replacing manual Excel tracking with a centralized platform for audits, issues, and remediation progress, designed to scale to accessibility teams beyond ServiceNow.',
       "Early adopter and tester for ServiceNow's unreleased AI-native development framework, shipping production features with it and surfacing bugs and usability feedback that informed pre-launch improvements.",

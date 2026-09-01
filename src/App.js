@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles.css';
 import Nav from './components/Nav';
+import ThemeToggle from './components/ThemeToggle';
 import Hero from './components/Hero';
 import Projects from './components/Projects';
 import Experience from './components/Experience';
@@ -15,6 +16,7 @@ function App() {
   return (
     <div className="App">
       <Nav />
+      <ThemeToggle />
       <main>
         <Hero />
         <Projects />
