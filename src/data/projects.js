@@ -7,6 +7,34 @@ export const FILTERS = ['All', 'AI / ML', 'Web', 'Mobile', 'Research', 'Communit
 
 const projects = [
   {
+    id: 'careascension',
+    title: 'CareAscension',
+    variant: 'featured',
+    image: 'images/care-ascension.png',
+    tags: ['Web', 'Community'],
+    stack: ['React', 'TypeScript', 'Fastify', 'PostgreSQL', 'Prisma', 'AWS Lambda'],
+    role: 'Team build (Technical Lead) · ASU Luminosity Lab',
+    blurb:
+      'Real-time shelter bed-tracking platform that connects outreach navigators, shelter staff, and city partners so people seeking shelter get placed faster.',
+    details:
+      "Built at ASU's Luminosity Lab with the City of Phoenix and local shelters. A React + TypeScript dashboard (beds, check-ins, reports, shifts, alerts) runs on a Fastify/PostgreSQL API with Prisma and JWT auth, live bed-status sync, multi-shelter support, and queue-backed SMS alerts for new reservation requests, deployed on AWS Lambda.",
+    links: [{ label: 'Live site', href: 'https://www.careascension.com/' }],
+  },
+  {
+    id: 'withkip',
+    title: 'WithKiP',
+    variant: 'featured',
+    image: 'images/care-ascension.png',
+    tags: ['AI / ML', 'Web'],
+    stack: ['React', 'TypeScript', 'Three.js', 'OpenAI', 'Stripe', 'Express', 'MongoDB'],
+    role: 'Team build · ASU Luminosity Lab',
+    blurb:
+      'Marketing and commerce site for KiP Robotics — a 3D-printable robot companion that teaches kids programming through interactive block-coding lessons and an AI coding buddy.',
+    details:
+      "Built at ASU's Luminosity Lab for the Spring 2026 launch. A React + TypeScript + Vite front end with shadcn/ui, a Three.js robot preview, an OpenAI-powered coding companion, and Stripe kit pre-orders, backed by an Express/MongoDB API with JWT and Google auth.",
+    links: [{ label: 'Live site', href: 'https://www.withkip.com/' }],
+  },
+  {
     id: 'storysprout',
     title: 'StorySprout',
     variant: 'featured',

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const RESUME_URL =
-  'https://docs.google.com/document/d/186M1_Q00dXBVX05e31C9_-zDlmeups3Pqb--8ydOx4Y/edit?usp=sharing';
+  'https://drive.google.com/file/d/1asU6QslqWdDk1wAYH65C-MN26xJnkp4k/view?usp=sharing';
 
 export default function Hero() {
   return (
@@ -15,7 +15,7 @@ export default function Hero() {
             I build full-stack, <em>user-centric</em> products.
           </h1>
           <p className="hero-lead reveal-up" style={{ '--i': 2 }}>
-            Computer Science student at ASU’s Barrett Honors College and an incoming
+            Computer Science student at ASU’s Barrett Honors College and an previous
             Software Engineer Intern at ServiceNow. I like turning messy real-world
             problems into interfaces people actually want to use — from AI
             storytelling to platforms for social good.
@@ -33,11 +33,14 @@ export default function Hero() {
               target="_blank"
               rel="noreferrer"
             >
-              Résumé
+              Resume
             </a>
           </div>
           <p className="hero-meta reveal-up" style={{ '--i': 4 }}>
-            Tempe, AZ · Python · Java · JavaScript · React · Swift
+            <span className="hero-meta-loc">Tempe, AZ</span>
+            <span className="hero-meta-stack">
+              Python · Java · JavaScript · React · Swift
+            </span>
           </p>
         </div>
 

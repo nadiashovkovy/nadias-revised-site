@@ -20,15 +20,11 @@ function LinkRow({ links }) {
 }
 
 export default function ProjectCard({ project }) {
-  const { title, image, tags, stack, role, blurb, details, variant } = project;
+  const { title, tags, stack, role, blurb, details, links, variant } = project;
   const isFeatured = variant === 'featured';
 
   return (
     <article className={`project-card ${isFeatured ? 'is-featured' : ''} fade-in`}>
-      <div className="project-media">
-        <img src={image} alt={`${title} preview`} loading="lazy" />
-      </div>
-
       <div className="project-body">
         <div className="project-heading">
           <h3 className="project-title">{title}</h3>
@@ -52,9 +48,7 @@ export default function ProjectCard({ project }) {
           </p>
         ) : null}
 
-        {project.links && project.links.length ? (
-          <LinkRow links={project.links} />
-        ) : null}
+        {links && links.length ? <LinkRow links={links} /> : null}
       </div>
     </article>
   );
