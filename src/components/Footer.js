@@ -13,15 +13,19 @@ const SOCIALS = [
 export default function Footer() {
   return (
     <footer className="site-footer">
+      <p className="footer-sign">Thanks for scrolling all the way down.</p>
       <div className="social-links">
         {SOCIALS.map((s) => (
           <a key={s.label} href={s.href} target="_blank" rel="noreferrer">
             <img src={s.icon} alt="" className="foot-link-icon" aria-hidden="true" />
             {s.label}
+            <span className="sr-only"> (opens in a new tab)</span>
           </a>
         ))}
       </div>
-      <p className="footer-note">© {new Date().getFullYear()} Nadia Shovkovy</p>
+      <p className="footer-note">
+        Built from scratch by me · © {new Date().getFullYear()} Nadia Shovkovy
+      </p>
     </footer>
   );
 }

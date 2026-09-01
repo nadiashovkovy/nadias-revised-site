@@ -33,10 +33,11 @@ export default function Experience() {
   }, []);
 
   return (
-    <section id="experience" className="experience">
+    <section id="experience" className="experience" aria-labelledby="experience-title">
       <div className="section-head fade-in">
-        <p className="section-kicker">Where I’ve worked</p>
-        <h2 className="section-title">Experience</h2>
+        <h2 className="section-title" id="experience-title">
+          Experience
+        </h2>
       </div>
 
       <div className="timeline-wrap" ref={wrapRef}>

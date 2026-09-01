@@ -16,9 +16,12 @@ function App() {
 
   return (
     <div className="App">
+      <a className="skip-link" href="#projects">
+        Skip to projects
+      </a>
       <Nav />
       <ThemeToggle />
-      <main>
+      <main id="main">
         <Hero />
         <Projects />
         <Experience />

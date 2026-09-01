@@ -30,11 +30,12 @@ const ACHIEVEMENTS = [
 
 export default function About() {
   return (
-    <section id="about" className="about">
+    <section id="about" className="about" aria-labelledby="about-title">
       <div className="about-grid">
         <div className="about-bio fade-in">
-          <p className="section-kicker">About</p>
-          <h2 className="section-title">A little about me</h2>
+          <h2 className="section-title" id="about-title">
+            A little about me
+          </h2>
           <p>
             I’m a Computer Science student at Arizona State University’s Barrett
             Honors College. I started out mentoring kids in code and running a

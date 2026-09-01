@@ -5,13 +5,13 @@ const RESUME_URL =
 
 export default function Hero() {
   return (
-    <section id="home" className="hero">
+    <section id="home" className="hero" aria-labelledby="hero-title">
       <div className="hero-inner">
         <div className="hero-copy">
           <p className="hero-eyebrow reveal-up" style={{ '--i': 0 }}>
             Hi! I'm Nadia Shovkovy.
           </p>
-          <h1 className="hero-title reveal-up" style={{ '--i': 1 }}>
+          <h1 id="hero-title" className="hero-title reveal-up" style={{ '--i': 1 }}>
             I build full-stack, <em>user-centric</em> products.
           </h1>
           <p className="hero-lead reveal-up" style={{ '--i': 2 }}>
@@ -33,6 +33,21 @@ export default function Hero() {
               rel="noreferrer"
             >
               Resume
+              <svg
+                className="btn-external"
+                viewBox="0 0 24 24"
+                width="14"
+                height="14"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" />
+              </svg>
+              <span className="sr-only"> (opens in a new tab)</span>
             </a>
           </div>
           <p className="hero-meta reveal-up" style={{ '--i': 4 }}>

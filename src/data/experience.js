@@ -30,7 +30,7 @@ const experience = [
     org: 'Pivotal Energy Solutions',
     href: 'https://pivotalenergysolutions.com/',
     role: 'Software Engineering Intern',
-    location: 'Hybrid',
+    location: 'Gilbert, AZ',
     dates: 'Apr 2024 – Nov 2025',
     bullets: [
       'Developed and debugged test methods across 50+ files, improving coverage and catching issues before production.',
