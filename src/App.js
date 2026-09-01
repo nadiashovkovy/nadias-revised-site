@@ -8,6 +8,7 @@ import Experience from './components/Experience';
 import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import BackToTop from './components/BackToTop';
 import useScrollReveal from './hooks/useScrollReveal';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <BackToTop />
     </div>
   );
 }

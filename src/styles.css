@@ -410,6 +410,190 @@ main > section + section {
   color: var(--peach-deep);
 }
 
+/* hamburger — hidden on desktop, shown on phones */
+.nav-toggle {
+  display: none;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  border-radius: 10px;
+  color: var(--ink);
+  cursor: var(--cursor-rays);
+}
+
+.nav-toggle-bars,
+.nav-toggle-bars::before,
+.nav-toggle-bars::after {
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), background 0.2s ease;
+}
+
+.nav-toggle-bars {
+  position: relative;
+}
+
+.nav-toggle-bars::before,
+.nav-toggle-bars::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+
+.nav-toggle-bars::before {
+  top: -6px;
+}
+
+.nav-toggle-bars::after {
+  top: 6px;
+}
+
+.site-nav.is-open .nav-toggle-bars {
+  background: transparent;
+}
+
+.site-nav.is-open .nav-toggle-bars::before {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.site-nav.is-open .nav-toggle-bars::after {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* invisible tap-catcher that closes the mobile menu */
+.nav-scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+}
+
+@media (max-width: 600px) {
+  /* pinned top-left, mirroring the theme toggle top-right */
+  .site-nav {
+    left: 18px;
+    transform: none;
+    width: auto;
+  }
+
+  .site-nav nav,
+  .site-nav.is-scrolled nav {
+    position: relative;
+    padding: 8px;
+  }
+
+  .nav-toggle {
+    display: grid;
+  }
+
+  .site-nav ul {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    width: max(200px, 52vw);
+    padding: 8px;
+    border-radius: 18px;
+    /* solid, not glass — the menu should be fully opaque */
+    background: var(--bg);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow-md);
+    font-size: 15px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: opacity 0.25s ease,
+      transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .site-nav.is-open ul {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .site-nav ul li {
+    width: 100%;
+  }
+
+  .site-nav ul a {
+    display: block;
+    padding: 11px 14px;
+    border-radius: 11px;
+    text-align: left;
+  }
+
+  .site-nav ul a::after {
+    display: none;
+  }
+
+  .site-nav ul a:hover,
+  .site-nav ul a.is-active {
+    background: var(--line);
+  }
+}
+
+/* ---------- back to top ---------- */
+.back-to-top {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 1200;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-fill-strong);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-edge);
+  color: var(--ink);
+  cursor: var(--cursor-rays);
+  opacity: 0;
+  transform: translateY(14px) scale(0.9);
+  pointer-events: none;
+  transition: opacity 0.3s ease,
+    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease,
+    color 0.2s ease;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.back-to-top:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--glass-edge-hover);
+  color: var(--peach-deep);
+}
+
+.back-to-top:active {
+  transform: translateY(0) scale(0.95);
+}
+
+.back-to-top:focus-visible {
+  outline: 2px solid var(--blue-bright);
+  outline-offset: 2px;
+}
+
+.back-to-top svg {
+  transition: transform 0.25s ease;
+}
+
+.back-to-top:hover svg {
+  transform: translateY(-2px);
+}
+
 /* ---------- buttons ---------- */
 .btn {
   position: relative;
