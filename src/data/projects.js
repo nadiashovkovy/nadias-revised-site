@@ -27,7 +27,7 @@ const projects = [
   {
     id: 'storysprout',
     title: 'StorySprout',
-    variant: 'featured',
+    variant: 'standard',
     image: 'images/story-sprout.png',
     tags: ['AI / ML', 'Web'],
     stack: ['React', 'TypeScript', 'Claude Sonnet 4', 'Stable Diffusion', 'ElevenLabs'],
