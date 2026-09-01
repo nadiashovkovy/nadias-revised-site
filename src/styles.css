@@ -867,6 +867,21 @@ main > section + section {
   filter: drop-shadow(0 32px 54px rgba(35, 32, 29, 0.22));
 }
 
+/* The CRT is a near-white cut-out; on the near-black page its hard edge glares
+   and reads as a ragged matte. Knock it back and give the edge a dark halo so
+   the transition to the background is soft. */
+:root[data-theme='dark'] .hero-img {
+  filter: brightness(0.88) saturate(0.95)
+    drop-shadow(0 0 1px rgba(0, 0, 0, 0.55))
+    drop-shadow(0 26px 42px rgba(0, 0, 0, 0.55));
+}
+
+:root[data-theme='dark'] .hero-img:hover {
+  filter: brightness(0.9) saturate(0.95)
+    drop-shadow(0 0 1px rgba(0, 0, 0, 0.55))
+    drop-shadow(0 32px 54px rgba(0, 0, 0, 0.6));
+}
+
 @keyframes hero-bob {
   0%,
   100% {
@@ -1389,6 +1404,13 @@ main > section + section {
   border-bottom: 1px solid var(--glass-border);
 }
 
+/* on phones a 21:9 cover collapses to a thin sliver — give it more height */
+@media (max-width: 620px) {
+  .project-card--featured .project-cover {
+    aspect-ratio: 16 / 10;
+  }
+}
+
 .project-card--featured .project-cover--type {
   aspect-ratio: auto;
   min-height: 176px;
@@ -1743,7 +1765,7 @@ main > section + section {
   min-width: 0;
 }
 
-@media (max-width: 820px) {
+@media (max-width: 900px) {
   .about-grid {
     grid-template-columns: 1fr;
   }
