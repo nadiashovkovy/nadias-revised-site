@@ -1263,6 +1263,7 @@ main > section + section {
   height: 100%;
   object-fit: cover;
   object-position: top center;
+  filter: grayscale(100%);
 }
 
 /* peach scrim over the screenshot. Its origin shifts by card position (the
