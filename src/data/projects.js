@@ -6,7 +6,8 @@
 // `outcome` is the one-line result shown in the card header (recruiter-scannable).
 // `tags` power the filter row; keep them from the shared vocabulary below.
 
-export const FILTERS = ['All', 'AI / ML', 'Web', 'Mobile', 'Research', 'Community'];
+// "Live" marks projects with real users in production, not demos or coursework.
+export const FILTERS = ['All', 'Live', 'AI / ML', 'Web', 'Mobile', 'Research', 'Community'];
 
 const projects = [
   {
@@ -14,10 +15,10 @@ const projects = [
     title: 'CareAscension',
     variant: 'featured',
     image: 'images/careascension.webp',
-    tags: ['Web', 'Community'],
+    tags: ['Live', 'Web', 'Community'],
     stack: ['React', 'TypeScript', 'Fastify', 'PostgreSQL', 'Prisma', 'AWS Lambda'],
     role: 'Technical Lead · ASU Luminosity Lab',
-    outcome: 'Live with the City of Phoenix and local shelters',
+    outcome: 'In use by the City of Phoenix and local shelters',
     blurb:
       'Real-time shelter bed-tracking platform that connects outreach navigators, shelter staff, and city partners so people seeking shelter get placed faster.',
     details:
@@ -32,7 +33,7 @@ const projects = [
     tags: ['AI / ML', 'Web'],
     stack: ['React', 'TypeScript', 'Claude Sonnet 4', 'Stable Diffusion', 'ElevenLabs'],
     role: 'Solo build · ASU SunHacks 2025',
-    outcome: 'Solo build shipped at SunHacks 2025',
+    outcome: 'Working demo shipped in one weekend',
     blurb:
       'Inclusive, adaptive AI storytelling site that makes every child the hero — reflecting their identity, abilities, and imagination.',
     details:
@@ -65,10 +66,10 @@ const projects = [
     title: 'WithKiP',
     variant: 'featured',
     image: 'images/withkip.webp',
-    tags: ['AI / ML', 'Web'],
+    tags: ['Live', 'AI / ML', 'Web'],
     stack: ['React', 'TypeScript', 'Three.js', 'OpenAI', 'Stripe', 'Express', 'MongoDB'],
     role: 'Team build · ASU Luminosity Lab',
-    outcome: 'Commerce and learning platform site for KiP Robotics',
+    outcome: 'Live storefront for KiP Robotics · launching Spring 2026',
     blurb:
       'Marketing and commerce site for KiP Robotics — a 3D-printable robot companion that teaches kids programming through interactive block-coding lessons and an AI coding buddy.',
     details:
@@ -99,11 +100,11 @@ const projects = [
     id: 'mask-rcnn',
     title: 'Transfer Learning with Mask R-CNN',
     variant: 'standard',
-    image: 'images/maskrcnn.png',
+    image: 'images/maskrcnn.webp',
     tags: ['AI / ML', 'Research'],
     stack: ['PyTorch', 'Google Colab', 'COCO 2017'],
     role: 'Honors research',
-    outcome: '2nd place, district science fair',
+    outcome: '2nd place, Robotics and Intelligent Machines category',
     blurb:
       'Research on how Mask R-CNN differs from other object detectors, plus hands-on transfer learning for instance segmentation.',
     details:
@@ -127,7 +128,7 @@ const projects = [
     tags: ['Web'],
     stack: ['Figma', 'Product design'],
     role: 'Concept, design & pitch · FSE 301',
-    outcome: 'Concept & pitch for FSE 301',
+    outcome: 'Figma prototype + pitch video',
     blurb:
       'A professional social network built around diverse communities, designed to create visibility and engagement for people underrepresented in tech.',
     details:
@@ -142,7 +143,7 @@ const projects = [
     tags: ['Community'],
     stack: ['Webflow', 'Curriculum design'],
     role: 'Founder',
-    outcome: 'Founded 2022 · 150+ volunteer hours',
+    outcome: 'Since 2022 · 150+ volunteer hours · hundreds of students',
     blurb:
       'A volunteering organization I founded in 2022 to teach engineering and coding at elementary schools.',
     details:
