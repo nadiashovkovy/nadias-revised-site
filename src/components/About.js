@@ -55,8 +55,9 @@ export default function About() {
           </p>
 
           <div className="edu-card">
-            <h3>Arizona State University · Barrett, The Honors College</h3>
-            <p className="edu-line">B.S. Computer Science · Aug 2024 – May 2028 · Tempe, AZ</p>
+            <h3>Arizona State University · Barrett, The Honors College · Tempe, AZ</h3>
+            <p className="edu-line">B.S. Computer Science · Aug 2024 – May 2028</p>
+            <p className="edu-line">M.S. Robotics & Autonomous Systems (Artificial Intelligence) · Aug 2027 – May 2028</p>
             <ul className="edu-list">
               {ACHIEVEMENTS.map((a) => (
                 <li key={a.text}>
