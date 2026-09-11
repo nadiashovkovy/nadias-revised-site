@@ -71,8 +71,10 @@ function LinkRow({ links }) {
 /* Deterministic accent so image-less covers still read as a set, not blanks. */
 const COVER_ACCENTS = ['peach', 'mint', 'blue'];
 
-/* The cover is a screenshot under a peach scrim. Image-less projects fall back
-   to a peach panel carrying the project name (the only place it appears for them). */
+/* Grid cards rest as plain text (the cover collapses to nothing in CSS) and
+   expand the cover to reveal the screenshot on hover. Image-less projects
+   fall back to a panel carrying the project name — there's no photo to
+   reveal, so that panel just stays put. */
 function Cover({ project, accentIndex }) {
   const { image, title } = project;
   const accent = COVER_ACCENTS[accentIndex % COVER_ACCENTS.length];

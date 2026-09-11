@@ -22,10 +22,16 @@ const SKILLS = [
 ];
 
 const ACHIEVEMENTS = [
-  'GPA 4.0',
-  'Leadership Scholarship Program — 1 of 25 selected',
-  'Grand Challenges Scholars Program',
-  'Undergraduate Teaching Assistant',
+  { text: 'GPA 4.0' },
+  {
+    text: 'Leadership Scholarship Program — 1 of 25 selected',
+    href: 'https://eoss.asu.edu/lsp',
+  },
+  {
+    text: 'Grand Challenges Scholars Program',
+    href: 'https://gcsp.engineering.asu.edu/',
+  },
+  { text: 'Undergraduate Teaching Assistant' },
 ];
 
 export default function About() {
@@ -53,7 +59,16 @@ export default function About() {
             <p className="edu-line">B.S. Computer Science · Aug 2024 – May 2028 · Tempe, AZ</p>
             <ul className="edu-list">
               {ACHIEVEMENTS.map((a) => (
-                <li key={a}>{a}</li>
+                <li key={a.text}>
+                  {a.href ? (
+                    <a href={a.href} target="_blank" rel="noreferrer">
+                      {a.text}
+                      <span className="sr-only"> (opens in a new tab)</span>
+                    </a>
+                  ) : (
+                    a.text
+                  )}
+                </li>
               ))}
             </ul>
           </div>

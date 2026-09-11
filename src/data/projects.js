@@ -69,7 +69,7 @@ const projects = [
     tags: ['Live', 'AI / ML', 'Web'],
     stack: ['React', 'TypeScript', 'Three.js', 'OpenAI', 'Stripe', 'Express', 'MongoDB'],
     role: 'Team build · ASU Luminosity Lab',
-    outcome: 'Live storefront for KiP Robotics · launching Spring 2026',
+    outcome: 'Live storefront and digital STEM learning platform',
     blurb:
       'Marketing and commerce site for KiP Robotics — a 3D-printable robot companion that teaches kids programming through interactive block-coding lessons and an AI coding buddy.',
     details:
@@ -143,7 +143,7 @@ const projects = [
     tags: ['Community'],
     stack: ['Webflow', 'Curriculum design'],
     role: 'Founder',
-    outcome: 'Since 2022 · 150+ volunteer hours · hundreds of students',
+    outcome: 'Since 2022 · 150+ volunteer hours · hundreds of students reached',
     blurb:
       'A volunteering organization I founded in 2022 to teach engineering and coding at elementary schools.',
     details:
