@@ -44,6 +44,24 @@ const projects = [
     ],
   },
   {
+    id: 'ichigo',
+    title: 'Ichigo',
+    variant: 'standard',
+    image: 'images/ichigo.webp',
+    tags: ['Web'],
+    stack: ['JavaScript', 'HTML Canvas', 'Web Audio', 'CSS', 'Vercel'],
+    role: 'Solo build',
+    outcome: 'Prologue and Level 1 playable in the browser',
+    blurb:
+      'Pixel-art platformer inspired by Hokusai’s prints. A fan recreation of the fictional game from Gabrielle Zevin’s novel “Tomorrow, and Tomorrow, and Tomorrow.”',
+    details:
+      'A small child is swept out to sea by a great wave and has to find their way home. Written in plain JavaScript on an HTML canvas, with a pixel-art pipeline that dithers every frame to a woodblock-print palette and a soundtrack synthesized live with the Web Audio API. Includes touch controls and saved progress. 15 Levels planned.',
+    links: [
+      { label: 'Play it', href: 'https://ichigo-web-game.vercel.app/' },
+      { label: 'Code', href: 'https://github.com/nadiashovkovy/ichigo' },
+    ],
+  },
+  {
     id: 'volunteen',
     title: 'VolunTeen',
     variant: 'standard',
@@ -161,18 +179,6 @@ const projects = [
       'A space for women in tech to share stories about the issues that matter to them, building supportive networks that help them lead in the field.',
     details: '',
     links: [{ label: 'Code', href: 'https://github.com/nadiashovkovy/totally-tech' }],
-  },
-  {
-    id: 'ichigo',
-    title: 'Ichigo',
-    variant: 'wip',
-    tags: ['Research'],
-    stack: ['Unity', 'C#'],
-    role: 'In progress',
-    blurb:
-      'Recreating the fictional game "Ichigo" from Gabrielle Zevin’s "Tomorrow, and Tomorrow, and Tomorrow" in Unity.',
-    details: '',
-    links: [{ label: 'Code', href: 'https://github.com/nadiashovkovy' }],
   },
 ];
 
